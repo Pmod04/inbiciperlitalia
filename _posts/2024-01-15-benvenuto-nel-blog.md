@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Benvenuto nel blog!"
-date: 2024-01-15
-author: Mario Rossi
-tags: [annunci, benvenuto]
+title: "Primo post - TEST"
+date: 2026-04-14
+author: Modena Pietro
+tags: [test]
 ---
 
 Questo è il **primo articolo** del blog. Questo file di esempio mostra come scrivere un post.
 
-## Come funziona
+## Come fare
 
-Basta creare un file `.md` nella cartella `_posts/` con il formato del nome:
+Crea un file `.md` nella cartella `_posts/` con il formato del nome:
 
 ```
 ANNO-MESE-GIORNO-titolo-articolo.md
