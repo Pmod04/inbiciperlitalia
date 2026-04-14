@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <div class="posts-header">
+    <h1>Ultimi articoli</h1>
+  </div>
+
+  {% if site.posts.size == 0 %}
+    <div class="no-posts">
+      <h2>Nessun articolo ancora</h2>
+      <p>Aggiungi un file <code>.md</code> nella cartella <code>_posts/</code> per pubblicare il primo articolo.</p>
+    </div>
+  {% else %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li class="post-item">
+
+          <div class="post-date-col">
+            <span class="post-day">{{ post.date | date: "%d" }}</span>
+            <span class="post-month-year">{{ post.date | date: "%b %Y" }}</span>
+          </div>
+
+          <div class="post-body">
+            <h2 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+
+            <div class="post-meta">
+              {% if post.author %}Scritto da <strong>{{ post.author }}</strong>{% endif %}
+              {% if post.tags.size > 0 %}
+                {% for tag in post.tags %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              {% endif %}
+            </div>
+
+            <p class="post-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 40 }}
+            </p>
+
+            <a class="read-more" href="{{ post.url | relative_url }}">Leggi l'articolo →</a>
+          </div>
+
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

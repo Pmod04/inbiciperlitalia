@@ -1,0 +1,31 @@
+title: "Il Mio Blog"
+description: "Articoli e pensieri"
+baseurl: ""
+url: "https://TUO-USERNAME.github.io"
+# ↑ Cambia TUO-USERNAME con il tuo username GitHub
+# Se il repo si chiama "blog" (non username.github.io), metti:
+#   url: "https://TUO-USERNAME.github.io"
+#   baseurl: "/blog"
+
+# Tema e build
+markdown: kramdown
+highlighter: rouge
+permalink: /articoli/:year/:month/:day/:title/
+
+# Kramdown: supporta immagini e tabelle
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugin supportati da GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Escludi dalla build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
