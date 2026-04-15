@@ -6,21 +6,22 @@ author: Modena Pietro
 tags: [test]
 ---
 
-Questo è il **primo articolo** del blog. Questo file di esempio mostra come scrivere un post.
+# Come scrivere un articolo
 
-## Come fare
+Il modo più semplice per pubblicare senza usare Git:
 
-Crea un file `.md` nella cartella `_posts/` con il formato del nome:
-
-```
-ANNO-MESE-GIORNO-titolo-articolo.md
-```
-
-Ad esempio: `2024-03-20-il-mio-nuovo-articolo.md`
+1. Vai su **github.com** → il repository del blog
+2. Entra nella cartella `_posts/`
+3. Clicca **Add file → Create new file**
+4. Scrivi il nome: `2024-03-20-titolo-articolo.md`
+5. Incolla il contenuto con il front matter
+6. Clicca **Commit changes**
 
 ## Intestazione necessaria
 
-Ogni file deve iniziare con questo blocco (chiamato *front matter*):
+Ogni file DEVE iniziare con questo blocco: 
+
+copia e incolla tutto all'inizio di ogni file puoi cambiare i campi title,date,author e tags ma non il campo layout
 
 ```yaml
 ---
@@ -32,14 +33,16 @@ tags: [tag1, tag2]
 ---
 ```
 
-## Formattazione supportata
+## Aggiungere Link
 
-Puoi usare tutta la sintassi Markdown:
+Per aggiungere un link metti il testo del link nelle parentesi quadre e l'url nelle tonde subito dopo, per esempio questa sintassi qua :
 
-- **grassetto**, *corsivo*, `codice`
-- Liste come questa
-- [Link](https://example.com)
-- Immagini (vedi sotto)
+```
+[sito di in bici per l'italia](https://inbiciperlitalia.com)
+```
+diventa :
+
+[sito di in bici per l'italia](https://inbiciperlitalia.com)
 
 ## Aggiungere immagini
 
@@ -49,6 +52,11 @@ Carica le immagini nella cartella `assets/images/` e poi nel testo scrivi:
 ![Descrizione immagine](/assets/images/nome-file.jpg)
 ```
 
-> Questa è una citazione. Puoi usarla per evidenziare frasi importanti.
+> Ti conviene o fare delle sottocartelle per ogni post e poi usare quelle come reference, per esempio
 
-E questo è tutto — benvenuto nel blog!
+>/asset/images/ <--- crei la nuova cartella qua
+>quindi adesso hai /assets/images/post01/ e carichi le foto di quel post qua dentro
+dopo per linkarle usi 
+``` markdown
+/assets/images/post01/nome-file.jpg
+```

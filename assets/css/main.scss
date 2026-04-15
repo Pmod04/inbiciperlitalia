@@ -6,7 +6,7 @@
   --ink: #1a1412;
   --paper: #f5f0e8;
   --cream: #ede7d5;
-  --accent: #c0392b;
+  --accent: #157523;
   --accent2: #8b6914;
   --muted: #7a7065;
   --rule: #cfc8b8;
@@ -16,9 +16,6 @@
   --font-mono: 'Fira Code', 'Courier New', monospace;
   --font-ui: 'DM Sans', system-ui, sans-serif;
 }
-
-/* ===== RESET & BASE ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 18px; scroll-behavior: smooth; }
 
