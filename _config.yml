@@ -1,11 +1,7 @@
-title: "Il Mio Blog"
-description: "Articoli e pensieri"
-baseurl: "/sitoTommy"
+title: "In bici per l'italia"
+description: "Tommy all'avventura"
+baseurl: "/inbiciperlitalia"
 url: "https://pmod04.github.io"
-# ↑ Cambia TUO-USERNAME con il tuo username GitHub
-# Se il repo si chiama "blog" (non username.github.io), metti:
-#   url: "https://TUO-USERNAME.github.io"
-#   baseurl: "/blog"
 
 # Tema e build
 markdown: kramdown
