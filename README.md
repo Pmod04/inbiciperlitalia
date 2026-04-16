@@ -2,7 +2,7 @@
 layout: post
 title: "Primo post - TEST"
 date: 2026-04-14
-author: Modena Pietro
+author: Pietro
 tags: [test]
 ---
 
@@ -26,10 +26,10 @@ copia e incolla tutto all'inizio di ogni file puoi cambiare i campi title,date,a
 ```yaml
 ---
 layout: post
-title: "Il titolo del mio articolo"
-date: 2024-03-20
-author: Il Tuo Nome
-tags: [tag1, tag2]
+title: "titolo"
+date: 2001-10-11
+author: Tommy
+tags:
 ---
 ```
 
@@ -49,14 +49,11 @@ diventa :
 Carica le immagini nella cartella `assets/images/` e poi nel testo scrivi:
 
 ```markdown
-![Descrizione immagine](/assets/images/nome-file.jpg)
+![Descrizione immagine](assets/images/2026_04_16_post3_pastaalsugo)
 ```
 
-> Ti conviene o fare delle sottocartelle per ogni post e poi usare quelle come reference, per esempio
+> Ti conviene dare un nome ad ogni foto relativo al posst nella qualela foto si trova quindi per esempi se il post si chiama "post 3" la foto si chiama "2026_04_16_post3_pastaalsugo" e poi la carichi
 
->/asset/images/ <--- crei la nuova cartella qua
->quindi adesso hai /assets/images/post01/ e carichi le foto di quel post qua dentro
-dopo per linkarle usi 
-``` markdown
-/assets/images/post01/nome-file.jpg
-```
+Test immagine 
+
+![rayman](assets/images/rayman.png)
