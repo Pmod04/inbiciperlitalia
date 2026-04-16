@@ -20,4 +20,4 @@ tags:
 
 Test immagine 
 
-![rayman](../assets/images/rayman.png)
+![rayman]({{ '/assets/images/rayman.png' | relative_url }})
