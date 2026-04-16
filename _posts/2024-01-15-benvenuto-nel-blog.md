@@ -60,3 +60,5 @@ dopo per linkarle usi
 ``` markdown
 /assets/images/post01/nome-file.jpg
 ```
+test immagine 
+![rayman](/assets/images/rayman.png)
