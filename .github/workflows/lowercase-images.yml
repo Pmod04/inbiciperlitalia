@@ -1,0 +1,29 @@
+name: Rinomina immagini in minuscolo
+
+on:
+  push:
+    paths:
+      - 'assets/images/**'
+
+jobs:
+  lowercase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rinomina file in minuscolo
+        run: |
+          find assets/images -type f | while read f; do
+            lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
+            if [ "$f" != "$lower" ]; then
+              git mv "$f" "$lower"
+              echo "Rinominato: $f → $lower"
+            fi
+          done
+
+      - name: Commit se ci sono modifiche
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git diff --staged --quiet || git commit -m "chore: immagini rinominate in minuscolo"
+          git push
