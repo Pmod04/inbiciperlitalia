@@ -328,3 +328,62 @@ a:hover { color: var(--accent2); }
   .post-day { font-size: 1.5rem; }
   .post-header h1 { font-size: 1.9rem; }
 }
+
+/* ===== MAPPA GPX ===== */
+.gpx-map-wrap {
+  margin: 0 0 2.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gpx-map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.gpx-map-label {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.gpx-map-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+.gpx-map-stats span {
+  white-space: nowrap;
+}
+
+#gpx-map {
+  height: 380px;
+  width: 100%;
+  background: #e8e0d0;
+}
+
+.gpx-elevation-wrap {
+  height: 110px;
+  padding: 0.5rem 0.8rem 0.4rem;
+  background: var(--cream);
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 600px) {
+  #gpx-map { height: 260px; }
+  .gpx-elevation-wrap { height: 90px; }
+  .gpx-map-stats { gap: 0.6rem; font-size: 0.78rem; }
+}
