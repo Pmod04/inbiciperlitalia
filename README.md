@@ -18,13 +18,23 @@ copia e incolla tutto all'inizio di ogni file puoi cambiare i campi title,date,a
 
 ```yaml
 ---
-layout: post
+layout: postx
 title: "titolo"
 date: 2001-10-11
 author: Tommy
+gpx: /assets/gpx/postx.gpx
 tags:
 ---
 ```
+
+## Aggiungere GPX (mappa)
+
+Per aggiungere la mappa vai su [onthegomap](onthegomap.com) e segna il percorso che hai fatto, quando hai completato clicca su "export as GPX" e rinomina il file .gpx come esempio "post1.gpx" poi carichi il file su git in /assests/gpx
+
+Poi nell'intestazione del post (quella qua sopra che devi copiare ogni volta, adesso c'è un parametro nuovo) devi mettere nel campo gpx: il percorso che sara appunto /assets/gpx/post1.gpx in questo esempio
+
+Fatto ora nel post c'è la mappa
+
 
 ## Aggiungere Link
 
