@@ -121,7 +121,6 @@ a:hover { color: var(--accent2); }
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 2rem;
-  align-start: start;
   animation: fadeUp 0.4s ease both;
 }
 .post-item:nth-child(2) { animation-delay: 0.05s; }
