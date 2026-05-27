@@ -23,13 +23,19 @@ title: "titolo"
 date: 2001-10-11
 author: Tommy
 gpx: /assets/gpx/postx.gpx
+color: #7d2248
 tags:
 ---
 ```
+## Campo "color" per la mappa home
+
+Ho aggiunto un campo color all'intestazione che rappresenta il colore che quella determinata traccia avrà nella mappa sulla home
+
+Il colore può essere in HEX (preferibilmente, vai su [htmlcolorcodes.com](https://htmlcolorcodes.com/)) o anche normale 
 
 ## Aggiungere GPX (mappa)
 
-Per aggiungere la mappa vai su [onthegomap](onthegomap.com) e segna il percorso che hai fatto, quando hai completato clicca su "export as GPX" e rinomina il file .gpx come esempio "post1.gpx" poi carichi il file su git in /assests/gpx
+Per aggiungere la mappa vai su [onthegomap](https://onthegomap.com) e segna il percorso che hai fatto, quando hai completato clicca su "export as GPX" e rinomina il file .gpx come esempio "post1.gpx" poi carichi il file su git in /assests/gpx
 
 Poi nell'intestazione del post (quella qua sopra che devi copiare ogni volta, adesso c'è un parametro nuovo) devi mettere nel campo gpx: il percorso che sara appunto /assets/gpx/post1.gpx in questo esempio
 
