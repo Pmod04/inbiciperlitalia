@@ -396,9 +396,6 @@ a:hover { color: var(--accent2); }
 }
 
 .disclaimer {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
   background: var(--cream);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
@@ -409,11 +406,6 @@ a:hover { color: var(--accent2); }
   color: var(--muted);
   font-style: italic;
   line-height: 1.5;
-}
-
-.disclaimer-icon {
-  flex-shrink: 0;
-  font-style: normal;
 }
 
 .disclaimer p { margin: 0; }
