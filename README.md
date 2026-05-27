@@ -23,7 +23,7 @@ title: "titolo"
 date: 2001-10-11
 author: Tommy
 gpx: /assets/gpx/postx.gpx
-color: #7d2248
+color: "#7d2248"
 tags:
 ---
 ```
@@ -31,7 +31,7 @@ tags:
 
 Ho aggiunto un campo color all'intestazione che rappresenta il colore che quella determinata traccia avrà nella mappa sulla home
 
-Il colore può essere in HEX (preferibilmente, vai su [htmlcolorcodes.com](https://htmlcolorcodes.com/)) o anche normale 
+Il colore può essere in HEX fra due virgolette es. "#7d2248" preferibilmente, vai su [htmlcolorcodes.com](https://htmlcolorcodes.com/) o anche normale 
 
 ## Aggiungere GPX (mappa)
 
