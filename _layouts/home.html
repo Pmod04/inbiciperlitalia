@@ -13,6 +13,99 @@ layout: default
     </div>
   </div>
 
+  <div class="home-map-wrap">
+    <div class="gpx-map-header">
+      <span class="gpx-map-label">&#9650; Percorso totale</span>
+      <span class="gpx-map-stats" id="home-map-stats"></span>
+    </div>
+    <div id="home-map"></div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+  <script>
+  (function() {
+    var map = L.map('home-map', { zoomControl: true, scrollWheelZoom: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    var accent = getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent').trim() || '#157523';
+
+    fetch('{{ "/gpx-index.json" | relative_url }}')
+      .then(function(r) { return r.json(); })
+      .then(function(posts) {
+        var allBounds = [];
+        var totalKm = 0;
+        var loaded = 0;
+
+        function makeIcon(color) {
+          return L.divIcon({
+            className: '',
+            html: '<div style="width:10px;height:10px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.4)"></div>',
+            iconSize: [10, 10], iconAnchor: [5, 5]
+          });
+        }
+
+        function haversine(a, b) {
+          var R = 6371;
+          var dLat = (b[0]-a[0]) * Math.PI/180;
+          var dLon = (b[1]-a[1]) * Math.PI/180;
+          var x = Math.sin(dLat/2)*Math.sin(dLat/2) +
+                  Math.cos(a[0]*Math.PI/180)*Math.cos(b[0]*Math.PI/180)*
+                  Math.sin(dLon/2)*Math.sin(dLon/2);
+          return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+        }
+
+        function updateStats() {
+          var el = document.getElementById('home-map-stats');
+          if (el) el.innerHTML = '<span>&#128205; ' + totalKm.toFixed(0) + ' km totali</span>';
+        }
+
+        posts.forEach(function(post) {
+          fetch(post.gpx)
+            .then(function(r) { return r.text(); })
+            .then(function(gpxText) {
+              var xml = new DOMParser().parseFromString(gpxText, 'application/xml');
+              var points = Array.from(xml.querySelectorAll('trkpt, rtept'));
+              if (!points.length) return;
+
+              var latlngs = points.map(function(p) {
+                return [parseFloat(p.getAttribute('lat')), parseFloat(p.getAttribute('lon'))];
+              });
+
+              // Calcola km tappa
+              for (var i = 1; i < latlngs.length; i++) {
+                totalKm += haversine(latlngs[i-1], latlngs[i]);
+              }
+
+              var poly = L.polyline(latlngs, {
+                color: accent, weight: 3, opacity: 0.85
+              }).bindTooltip(post.title, { sticky: true }).addTo(map);
+
+              // Marker inizio/fine solo primo e ultimo punto globali
+              L.marker(latlngs[0], { icon: makeIcon(accent) }).addTo(map);
+              L.marker(latlngs[latlngs.length-1], { icon: makeIcon('#c0392b') }).addTo(map);
+
+              allBounds.push(poly.getBounds());
+              loaded++;
+              updateStats();
+
+              // Quando tutti i GPX sono caricati, adatta la vista
+              if (loaded === posts.length) {
+                var bounds = allBounds[0];
+                allBounds.forEach(function(b) { bounds.extend(b); });
+                map.fitBounds(bounds, { padding: [24, 24] });
+              }
+            });
+        });
+      });
+  })();
+  </script>
+
   <div class="posts-header">
     <h1>Ultimi articoli</h1>
   </div>

@@ -409,3 +409,21 @@ a:hover { color: var(--accent2); }
 }
 
 .disclaimer p { margin: 0; }
+
+/* ===== MAPPA HOME ===== */
+.home-map-wrap {
+  margin-bottom: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#home-map {
+  height: 340px;
+  width: 100%;
+  background: #e8e0d0;
+}
+
+@media (max-width: 600px) {
+  #home-map { height: 240px; }
+}
