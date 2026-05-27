@@ -386,3 +386,34 @@ a:hover { color: var(--accent2); }
   .gpx-elevation-wrap { height: 90px; }
   .gpx-map-stats { gap: 0.6rem; font-size: 0.78rem; }
 }
+
+/* ===== DISCLAIMER ===== */
+.disclaimers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.disclaimer-icon {
+  flex-shrink: 0;
+  font-style: normal;
+}
+
+.disclaimer p { margin: 0; }
