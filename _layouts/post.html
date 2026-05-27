@@ -43,7 +43,7 @@ layout: default
       var GPX_URL = "{{ page.gpx | relative_url }}";
 
       // Inizializza mappa
-      var map = L.map('gpx-map', { zoomControl: true, scrollWheelZoom: false });
+      var map = L.map('gpx-map', { zoomControl: true, scrollWheelZoom: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
         maxZoom: 18
